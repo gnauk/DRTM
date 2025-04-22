@@ -5,10 +5,13 @@ A physically based differentiable radiative transfer model (DRTM). Designed for 
 ## Usage 
 ### 1、 Compile Mitsuba3 
 Before using this project, users must first build Mitsuba3 from the **mitsuba3 folder**. Follow the official [Mitsuba3 documentation](https://mitsuba.readthedocs.io/en/latest/src/getting_started/compiling.html) for compilation instructions.
+
 Note: The version in the mitsuba3 folder differs from the official release. The enhancement details will be added subsequently.
 
 ### 2、 Run UseCases 
-The **usecases folder** contains ready-to-run examples demonstrating key functionalities. For scene generation, users may leverage existing 3D model architectures like LESS or Eradiate model.
+The **usecases folder** contains ready-to-run examples demonstrating key functionalities. 
+
+For scene generation, users may leverage existing 3D model architectures like LESS or Eradiate model.
 
 ## Usecases Introduction
 
