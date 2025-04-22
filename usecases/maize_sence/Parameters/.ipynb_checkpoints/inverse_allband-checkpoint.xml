@@ -1,0 +1,1647 @@
+<scene version='3.0.0'>
+	<integrator type="prb">
+		<integer name="max_depth" value="-1"/>
+		<integer name="rr_depth" value="6"/>
+	</integrator>
+	<sensor type="orthographic">
+		<float name="near_clip" value="0.0000001"/>
+		<float name="far_clip" value="10000000000"/>
+		<transform name="to_world">
+			<scale x="1.0" y="1.0"/>
+			<lookat origin="0.0,3000.0,0.0" target="0,0,0" up="0.00000,0,1.00000"/>
+		</transform>
+		<sampler type="independent">
+            <integer name="sample_count" value="32"/>
+        </sampler>
+		<film type="rsspecfilm">
+			<rfilter type="gaussian">
+				<float name="stddev" value="0.25"/>
+			</rfilter>
+			<spectrum name="band1" type="discret">
+	            <string name="wavelengths" value="490" />
+                <string name="values" value="1" />
+            </spectrum>
+			<spectrum name="band2" type="discret">
+	            <string name="wavelengths" value="560" />
+                <string name="values" value="1" />
+            </spectrum>
+			<spectrum name="band3" type="discret">
+	            <string name="wavelengths" value="665" />
+                <string name="values" value="1" />
+            </spectrum>
+			<spectrum name="band4" type="discret">
+	            <string name="wavelengths" value="865" />
+                <string name="values" value="1" />
+            </spectrum>
+			<integer name="width" value="100"/>
+			<integer name="height" value="100"/>
+		</film>
+	</sensor>
+	<emitter type="directional">
+		<vector name="direction" x="-0.3535533905932737" y="-0.8660254037844387" z="0.35355339059327373"/>
+		<spectrum name="irradiance" value="490:2.1060533832896704,560:1.7561459828239954,665:1.4870436510792797,865:0.8993707420932682"/>
+	</emitter>
+	<shape id="terrain" type="rectangle">
+		<transform name="to_world">
+			<rotate angle="-90" x="1"/>
+			<scale x="3.0" z="3.0"/>
+		</transform>
+		<bsdf type="twosided">
+			<bsdf type="diffuse">
+				<spectrum name="reflectance" value="490:0.0739,560:0.1535,665:0.2396,865:0.3405"/>
+			</bsdf>
+			<bsdf type="diffuse">
+				<spectrum name="reflectance" value="0.0000"/>
+			</bsdf>
+		</bsdf>
+	</shape>
+	<bsdf id="leaf1" type="bilambertian">
+        <spectrum name="reflectance" value="490:0.0767,560:0.1459,665:0.0803,865:0.4632"/>
+        <spectrum name="transmittance" value="490:0.0034,560:0.0779,665:0.0045,865:0.4758"/>
+	</bsdf>
+	<bsdf id="trunk" type="diffuse">
+		<spectrum name="reflectance" value="490:0.0662,560:0.1335,665:0.0676,865:0.4676"/>
+	</bsdf>
+	<shape id="crond" type="shapegroup">
+		<shape id="crond_group20" type="serialized">
+			<string name="filename" value="crond_group20.serialized"/>
+			<ref id="leaf1"/>
+			<boolean name="face_normals" value="true"/>
+		</shape>
+		<shape id="crond_group11" type="serialized">
+			<string name="filename" value="crond_group11.serialized"/>
+			<ref id="leaf1"/>
+			<boolean name="face_normals" value="true"/>
+		</shape>
+		<shape id="crond_group22" type="serialized">
+			<string name="filename" value="crond_group22.serialized"/>
+			<ref id="leaf1"/>
+			<boolean name="face_normals" value="true"/>
+		</shape>
+		<shape id="crond_group10" type="serialized">
+			<string name="filename" value="crond_group10.serialized"/>
+			<ref id="leaf1"/>
+			<boolean name="face_normals" value="true"/>
+		</shape>
+		<shape id="crond_group21" type="serialized">
+			<string name="filename" value="crond_group21.serialized"/>
+			<ref id="leaf1"/>
+			<boolean name="face_normals" value="true"/>
+		</shape>
+		<shape id="crond_group8" type="serialized">
+			<string name="filename" value="crond_group8.serialized"/>
+			<ref id="leaf1"/>
+			<boolean name="face_normals" value="true"/>
+		</shape>
+		<shape id="crond_group7" type="serialized">
+			<string name="filename" value="crond_group7.serialized"/>
+			<ref id="leaf1"/>
+			<boolean name="face_normals" value="true"/>
+		</shape>
+		<shape id="crond_group9" type="serialized">
+			<string name="filename" value="crond_group9.serialized"/>
+			<ref id="leaf1"/>
+			<boolean name="face_normals" value="true"/>
+		</shape>
+		<shape id="crond_group4" type="serialized">
+			<string name="filename" value="crond_group4.serialized"/>
+			<ref id="leaf1"/>
+			<boolean name="face_normals" value="true"/>
+		</shape>
+		<shape id="crond_group3" type="serialized">
+			<string name="filename" value="crond_group3.serialized"/>
+			<ref id="leaf1"/>
+			<boolean name="face_normals" value="true"/>
+		</shape>
+		<shape id="crond_group6" type="serialized">
+			<string name="filename" value="crond_group6.serialized"/>
+			<ref id="leaf1"/>
+			<boolean name="face_normals" value="true"/>
+		</shape>
+		<shape id="crond_group5" type="serialized">
+			<string name="filename" value="crond_group5.serialized"/>
+			<ref id="leaf1"/>
+			<boolean name="face_normals" value="true"/>
+		</shape>
+		<shape id="crond_group1" type="serialized">
+			<string name="filename" value="crond_group1.serialized"/>
+			<ref id="trunk"/>
+			<boolean name="face_normals" value="true"/>
+		</shape>
+		<shape id="crond_group17" type="serialized">
+			<string name="filename" value="crond_group17.serialized"/>
+			<ref id="leaf1"/>
+			<boolean name="face_normals" value="true"/>
+		</shape>
+		<shape id="crond_group16" type="serialized">
+			<string name="filename" value="crond_group16.serialized"/>
+			<ref id="leaf1"/>
+			<boolean name="face_normals" value="true"/>
+		</shape>
+		<shape id="crond_group19" type="serialized">
+			<string name="filename" value="crond_group19.serialized"/>
+			<ref id="leaf1"/>
+			<boolean name="face_normals" value="true"/>
+		</shape>
+		<shape id="crond_group18" type="serialized">
+			<string name="filename" value="crond_group18.serialized"/>
+			<ref id="leaf1"/>
+			<boolean name="face_normals" value="true"/>
+		</shape>
+		<shape id="crond_group13" type="serialized">
+			<string name="filename" value="crond_group13.serialized"/>
+			<ref id="leaf1"/>
+			<boolean name="face_normals" value="true"/>
+		</shape>
+		<shape id="crond_group12" type="serialized">
+			<string name="filename" value="crond_group12.serialized"/>
+			<ref id="leaf1"/>
+			<boolean name="face_normals" value="true"/>
+		</shape>
+		<shape id="crond_group23" type="serialized">
+			<string name="filename" value="crond_group23.serialized"/>
+			<ref id="leaf1"/>
+			<boolean name="face_normals" value="true"/>
+		</shape>
+		<shape id="crond_group15" type="serialized">
+			<string name="filename" value="crond_group15.serialized"/>
+			<ref id="leaf1"/>
+			<boolean name="face_normals" value="true"/>
+		</shape>
+		<shape id="crond_group14" type="serialized">
+			<string name="filename" value="crond_group14.serialized"/>
+			<ref id="leaf1"/>
+			<boolean name="face_normals" value="true"/>
+		</shape>
+	</shape>
+	<shape id="crond_0" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="0.00" y="1"/>
+			<translate x="3.0" y="0.0" z="3.0"/>
+		</transform>
+	</shape>
+	<shape id="crond_1" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="5" y="1"/>
+			<translate x="3.0" y="0.0" z="2.7"/>
+		</transform>
+	</shape>
+	<shape id="crond_2" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="10" y="1"/>
+			<translate x="3.0" y="0.0" z="2.4"/>
+		</transform>
+	</shape>
+	<shape id="crond_3" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="7" y="1"/>
+			<translate x="3.0" y="0.0" z="2.1"/>
+		</transform>
+	</shape>
+	<shape id="crond_4" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="10" y="1"/>
+			<translate x="3.0" y="0.0" z="1.8"/>
+		</transform>
+	</shape>
+	<shape id="crond_5" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="10" y="1"/>
+			<translate x="3.0" y="0.0" z="1.5"/>
+		</transform>
+	</shape>
+	<shape id="crond_6" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="4" y="1"/>
+			<translate x="3.0" y="0.0" z="1.2"/>
+		</transform>
+	</shape>
+	<shape id="crond_7" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="17" y="1"/>
+			<translate x="3.0" y="0.0" z="0.8999999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_8" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-10" y="1"/>
+			<translate x="3.0" y="0.0" z="0.6000000000000001"/>
+		</transform>
+	</shape>
+	<shape id="crond_9" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-20" y="1"/>
+			<translate x="3.0" y="0.0" z="0.30000000000000027"/>
+		</transform>
+	</shape>
+	<shape id="crond_10" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="13" y="1"/>
+			<translate x="3.0" y="0.0" z="4.440892098500626e-16"/>
+		</transform>
+	</shape>
+	<shape id="crond_11" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="29" y="1"/>
+			<translate x="3.0" y="0.0" z="-0.2999999999999994"/>
+		</transform>
+	</shape>
+	<shape id="crond_12" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="28" y="1"/>
+			<translate x="3.0" y="0.0" z="-0.5999999999999992"/>
+		</transform>
+	</shape>
+	<shape id="crond_13" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="20" y="1"/>
+			<translate x="3.0" y="0.0" z="-0.899999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_14" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="12" y="1"/>
+			<translate x="3.0" y="0.0" z="-1.1999999999999993"/>
+		</transform>
+	</shape>
+	<shape id="crond_15" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="15" y="1"/>
+			<translate x="3.0" y="0.0" z="-1.4999999999999991"/>
+		</transform>
+	</shape>
+	<shape id="crond_16" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-20" y="1"/>
+			<translate x="3.0" y="0.0" z="-1.799999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_17" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="14" y="1"/>
+			<translate x="3.0" y="0.0" z="-2.0999999999999988"/>
+		</transform>
+	</shape>
+	<shape id="crond_18" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="3" y="1"/>
+			<translate x="3.0" y="0.0" z="-2.3999999999999986"/>
+		</transform>
+	</shape>
+	<shape id="crond_19" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-20" y="1"/>
+			<translate x="3.0" y="0.0" z="-2.6999999999999984"/>
+		</transform>
+	</shape>
+	<shape id="crond_20" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-10" y="1"/>
+			<translate x="3.0" y="0.0" z="-2.9999999999999982"/>
+		</transform>
+	</shape>
+	<shape id="crond_21" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="7" y="1"/>
+			<translate x="2.35" y="0.0" z="3.0"/>
+		</transform>
+	</shape>
+	<shape id="crond_22" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="20" y="1"/>
+			<translate x="2.35" y="0.0" z="2.7"/>
+		</transform>
+	</shape>
+	<shape id="crond_23" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="10" y="1"/>
+			<translate x="2.35" y="0.0" z="2.4"/>
+		</transform>
+	</shape>
+	<shape id="crond_24" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="9" y="1"/>
+			<translate x="2.35" y="0.0" z="2.1"/>
+		</transform>
+	</shape>
+	<shape id="crond_25" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-10" y="1"/>
+			<translate x="2.35" y="0.0" z="1.8"/>
+		</transform>
+	</shape>
+	<shape id="crond_26" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="23" y="1"/>
+			<translate x="2.35" y="0.0" z="1.5"/>
+		</transform>
+	</shape>
+	<shape id="crond_27" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-15" y="1"/>
+			<translate x="2.35" y="0.0" z="1.2"/>
+		</transform>
+	</shape>
+	<shape id="crond_28" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="16" y="1"/>
+			<translate x="2.35" y="0.0" z="0.8999999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_29" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="20" y="1"/>
+			<translate x="2.35" y="0.0" z="0.6000000000000001"/>
+		</transform>
+	</shape>
+	<shape id="crond_30" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="31" y="1"/>
+			<translate x="2.35" y="0.0" z="0.30000000000000027"/>
+		</transform>
+	</shape>
+	<shape id="crond_31" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-20" y="1"/>
+			<translate x="2.35" y="0.0" z="4.440892098500626e-16"/>
+		</transform>
+	</shape>
+	<shape id="crond_32" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-10" y="1"/>
+			<translate x="2.35" y="0.0" z="-0.2999999999999994"/>
+		</transform>
+	</shape>
+	<shape id="crond_33" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-10" y="1"/>
+			<translate x="2.35" y="0.0" z="-0.5999999999999992"/>
+		</transform>
+	</shape>
+	<shape id="crond_34" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-30" y="1"/>
+			<translate x="2.35" y="0.0" z="-0.899999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_35" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-20" y="1"/>
+			<translate x="2.35" y="0.0" z="-1.1999999999999993"/>
+		</transform>
+	</shape>
+	<shape id="crond_36" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="9" y="1"/>
+			<translate x="2.35" y="0.0" z="-1.4999999999999991"/>
+		</transform>
+	</shape>
+	<shape id="crond_37" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="5" y="1"/>
+			<translate x="2.35" y="0.0" z="-1.799999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_38" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="23" y="1"/>
+			<translate x="2.35" y="0.0" z="-2.0999999999999988"/>
+		</transform>
+	</shape>
+	<shape id="crond_39" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-20" y="1"/>
+			<translate x="2.35" y="0.0" z="-2.3999999999999986"/>
+		</transform>
+	</shape>
+	<shape id="crond_40" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="32" y="1"/>
+			<translate x="2.35" y="0.0" z="-2.6999999999999984"/>
+		</transform>
+	</shape>
+	<shape id="crond_41" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-31" y="1"/>
+			<translate x="2.35" y="0.0" z="-2.9999999999999982"/>
+		</transform>
+	</shape>
+	<shape id="crond_42" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-9" y="1"/>
+			<translate x="1.7" y="0.0" z="3.0"/>
+		</transform>
+	</shape>
+	<shape id="crond_43" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="1" y="1"/>
+			<translate x="1.7" y="0.0" z="2.7"/>
+		</transform>
+	</shape>
+	<shape id="crond_44" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="10" y="1"/>
+			<translate x="1.7" y="0.0" z="2.4"/>
+		</transform>
+	</shape>
+	<shape id="crond_45" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="7" y="1"/>
+			<translate x="1.7" y="0.0" z="2.1"/>
+		</transform>
+	</shape>
+	<shape id="crond_46" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-20" y="1"/>
+			<translate x="1.7" y="0.0" z="1.8"/>
+		</transform>
+	</shape>
+	<shape id="crond_47" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="18" y="1"/>
+			<translate x="1.7" y="0.0" z="1.5"/>
+		</transform>
+	</shape>
+	<shape id="crond_48" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="15" y="1"/>
+			<translate x="1.7" y="0.0" z="1.2"/>
+		</transform>
+	</shape>
+	<shape id="crond_49" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-20" y="1"/>
+			<translate x="1.7" y="0.0" z="0.8999999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_50" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-30" y="1"/>
+			<translate x="1.7" y="0.0" z="0.6000000000000001"/>
+		</transform>
+	</shape>
+	<shape id="crond_51" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-10" y="1"/>
+			<translate x="1.7" y="0.0" z="0.30000000000000027"/>
+		</transform>
+	</shape>
+	<shape id="crond_52" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="10" y="1"/>
+			<translate x="1.7" y="0.0" z="4.440892098500626e-16"/>
+		</transform>
+	</shape>
+	<shape id="crond_53" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="23" y="1"/>
+			<translate x="1.7" y="0.0" z="-0.2999999999999994"/>
+		</transform>
+	</shape>
+	<shape id="crond_54" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="23" y="1"/>
+			<translate x="1.7" y="0.0" z="-0.5999999999999992"/>
+		</transform>
+	</shape>
+	<shape id="crond_55" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="21" y="1"/>
+			<translate x="1.7" y="0.0" z="-0.899999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_56" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-24" y="1"/>
+			<translate x="1.7" y="0.0" z="-1.1999999999999993"/>
+		</transform>
+	</shape>
+	<shape id="crond_57" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="9" y="1"/>
+			<translate x="1.7" y="0.0" z="-1.4999999999999991"/>
+		</transform>
+	</shape>
+	<shape id="crond_58" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-21" y="1"/>
+			<translate x="1.7" y="0.0" z="-1.799999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_59" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="13" y="1"/>
+			<translate x="1.7" y="0.0" z="-2.0999999999999988"/>
+		</transform>
+	</shape>
+	<shape id="crond_60" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="22" y="1"/>
+			<translate x="1.7" y="0.0" z="-2.3999999999999986"/>
+		</transform>
+	</shape>
+	<shape id="crond_61" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="8" y="1"/>
+			<translate x="1.7" y="0.0" z="-2.6999999999999984"/>
+		</transform>
+	</shape>
+	<shape id="crond_62" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-10" y="1"/>
+			<translate x="1.7" y="0.0" z="-2.9999999999999982"/>
+		</transform>
+	</shape>
+	<shape id="crond_63" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-32" y="1"/>
+			<translate x="1.0499999999999998" y="0.0" z="3.0"/>
+		</transform>
+	</shape>
+	<shape id="crond_64" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="20" y="1"/>
+			<translate x="1.0499999999999998" y="0.0" z="2.7"/>
+		</transform>
+	</shape>
+	<shape id="crond_65" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-10" y="1"/>
+			<translate x="1.0499999999999998" y="0.0" z="2.4"/>
+		</transform>
+	</shape>
+	<shape id="crond_66" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="10" y="1"/>
+			<translate x="1.0499999999999998" y="0.0" z="2.1"/>
+		</transform>
+	</shape>
+	<shape id="crond_67" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-6" y="1"/>
+			<translate x="1.0499999999999998" y="0.0" z="1.8"/>
+		</transform>
+	</shape>
+	<shape id="crond_68" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="0.00" y="1"/>
+			<translate x="1.0499999999999998" y="0.0" z="1.5"/>
+		</transform>
+	</shape>
+	<shape id="crond_69" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="3" y="1"/>
+			<translate x="1.0499999999999998" y="0.0" z="1.2"/>
+		</transform>
+	</shape>
+	<shape id="crond_70" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-20" y="1"/>
+			<translate x="1.0499999999999998" y="0.0" z="0.8999999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_71" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="30" y="1"/>
+			<translate x="1.0499999999999998" y="0.0" z="0.6000000000000001"/>
+		</transform>
+	</shape>
+	<shape id="crond_72" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-20" y="1"/>
+			<translate x="1.0499999999999998" y="0.0" z="0.30000000000000027"/>
+		</transform>
+	</shape>
+	<shape id="crond_73" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="12" y="1"/>
+			<translate x="1.0499999999999998" y="0.0" z="4.440892098500626e-16"/>
+		</transform>
+	</shape>
+	<shape id="crond_74" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="17" y="1"/>
+			<translate x="1.0499999999999998" y="0.0" z="-0.2999999999999994"/>
+		</transform>
+	</shape>
+	<shape id="crond_75" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="13" y="1"/>
+			<translate x="1.0499999999999998" y="0.0" z="-0.5999999999999992"/>
+		</transform>
+	</shape>
+	<shape id="crond_76" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="20" y="1"/>
+			<translate x="1.0499999999999998" y="0.0" z="-0.899999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_77" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-20" y="1"/>
+			<translate x="1.0499999999999998" y="0.0" z="-1.1999999999999993"/>
+		</transform>
+	</shape>
+	<shape id="crond_78" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="0.00" y="1"/>
+			<translate x="1.0499999999999998" y="0.0" z="-1.4999999999999991"/>
+		</transform>
+	</shape>
+	<shape id="crond_79" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-12" y="1"/>
+			<translate x="1.0499999999999998" y="0.0" z="-1.799999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_80" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="20" y="1"/>
+			<translate x="1.0499999999999998" y="0.0" z="-2.0999999999999988"/>
+		</transform>
+	</shape>
+	<shape id="crond_81" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="19" y="1"/>
+			<translate x="1.0499999999999998" y="0.0" z="-2.3999999999999986"/>
+		</transform>
+	</shape>
+	<shape id="crond_82" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-3" y="1"/>
+			<translate x="1.0499999999999998" y="0.0" z="-2.6999999999999984"/>
+		</transform>
+	</shape>
+	<shape id="crond_83" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="12" y="1"/>
+			<translate x="1.0499999999999998" y="0.0" z="-2.9999999999999982"/>
+		</transform>
+	</shape>
+	<shape id="crond_84" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="7" y="1"/>
+			<translate x="0.3999999999999999" y="0.0" z="3.0"/>
+		</transform>
+	</shape>
+	<shape id="crond_85" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="3" y="1"/>
+			<translate x="0.3999999999999999" y="0.0" z="2.7"/>
+		</transform>
+	</shape>
+	<shape id="crond_86" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="9" y="1"/>
+			<translate x="0.3999999999999999" y="0.0" z="2.4"/>
+		</transform>
+	</shape>
+	<shape id="crond_87" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="0.00" y="1"/>
+			<translate x="0.3999999999999999" y="0.0" z="2.1"/>
+		</transform>
+	</shape>
+	<shape id="crond_88" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="10" y="1"/>
+			<translate x="0.3999999999999999" y="0.0" z="1.8"/>
+		</transform>
+	</shape>
+	<shape id="crond_89" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="2" y="1"/>
+			<translate x="0.3999999999999999" y="0.0" z="1.5"/>
+		</transform>
+	</shape>
+	<shape id="crond_90" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="10" y="1"/>
+			<translate x="0.3999999999999999" y="0.0" z="1.2"/>
+		</transform>
+	</shape>
+	<shape id="crond_91" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-20" y="1"/>
+			<translate x="0.3999999999999999" y="0.0" z="0.8999999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_92" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-3" y="1"/>
+			<translate x="0.3999999999999999" y="0.0" z="0.6000000000000001"/>
+		</transform>
+	</shape>
+	<shape id="crond_93" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="14" y="1"/>
+			<translate x="0.3999999999999999" y="0.0" z="0.30000000000000027"/>
+		</transform>
+	</shape>
+	<shape id="crond_94" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="24" y="1"/>
+			<translate x="0.3999999999999999" y="0.0" z="4.440892098500626e-16"/>
+		</transform>
+	</shape>
+	<shape id="crond_95" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="20" y="1"/>
+			<translate x="0.3999999999999999" y="0.0" z="-0.2999999999999994"/>
+		</transform>
+	</shape>
+	<shape id="crond_96" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-20" y="1"/>
+			<translate x="0.3999999999999999" y="0.0" z="-0.5999999999999992"/>
+		</transform>
+	</shape>
+	<shape id="crond_97" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="21" y="1"/>
+			<translate x="0.3999999999999999" y="0.0" z="-0.899999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_98" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-2" y="1"/>
+			<translate x="0.3999999999999999" y="0.0" z="-1.1999999999999993"/>
+		</transform>
+	</shape>
+	<shape id="crond_99" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-12" y="1"/>
+			<translate x="0.3999999999999999" y="0.0" z="-1.4999999999999991"/>
+		</transform>
+	</shape>
+	<shape id="crond_100" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="10" y="1"/>
+			<translate x="0.3999999999999999" y="0.0" z="-1.799999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_101" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="5" y="1"/>
+			<translate x="0.3999999999999999" y="0.0" z="-2.0999999999999988"/>
+		</transform>
+	</shape>
+	<shape id="crond_102" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="16" y="1"/>
+			<translate x="0.3999999999999999" y="0.0" z="-2.3999999999999986"/>
+		</transform>
+	</shape>
+	<shape id="crond_103" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-23" y="1"/>
+			<translate x="0.3999999999999999" y="0.0" z="-2.6999999999999984"/>
+		</transform>
+	</shape>
+	<shape id="crond_104" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-14" y="1"/>
+			<translate x="0.3999999999999999" y="0.0" z="-2.9999999999999982"/>
+		</transform>
+	</shape>
+	<shape id="crond_105" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="18" y="1"/>
+			<translate x="-0.25" y="0.0" z="3.0"/>
+		</transform>
+	</shape>
+	<shape id="crond_106" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-20" y="1"/>
+			<translate x="-0.25" y="0.0" z="2.7"/>
+		</transform>
+	</shape>
+	<shape id="crond_107" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="23" y="1"/>
+			<translate x="-0.25" y="0.0" z="2.4"/>
+		</transform>
+	</shape>
+	<shape id="crond_108" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-2" y="1"/>
+			<translate x="-0.25" y="0.0" z="2.1"/>
+		</transform>
+	</shape>
+	<shape id="crond_109" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="27" y="1"/>
+			<translate x="-0.25" y="0.0" z="1.8"/>
+		</transform>
+	</shape>
+	<shape id="crond_110" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="0.00" y="1"/>
+			<translate x="-0.25" y="0.0" z="1.5"/>
+		</transform>
+	</shape>
+	<shape id="crond_111" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="5" y="1"/>
+			<translate x="-0.25" y="0.0" z="1.2"/>
+		</transform>
+	</shape>
+	<shape id="crond_112" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-10" y="1"/>
+			<translate x="-0.25" y="0.0" z="0.8999999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_113" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="13" y="1"/>
+			<translate x="-0.25" y="0.0" z="0.6000000000000001"/>
+		</transform>
+	</shape>
+	<shape id="crond_114" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-20" y="1"/>
+			<translate x="-0.25" y="0.0" z="0.30000000000000027"/>
+		</transform>
+	</shape>
+	<shape id="crond_115" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-10" y="1"/>
+			<translate x="-0.25" y="0.0" z="4.440892098500626e-16"/>
+		</transform>
+	</shape>
+	<shape id="crond_116" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="9" y="1"/>
+			<translate x="-0.25" y="0.0" z="-0.2999999999999994"/>
+		</transform>
+	</shape>
+	<shape id="crond_117" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="15" y="1"/>
+			<translate x="-0.25" y="0.0" z="-0.5999999999999992"/>
+		</transform>
+	</shape>
+	<shape id="crond_118" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="20" y="1"/>
+			<translate x="-0.25" y="0.0" z="-0.899999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_119" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-23" y="1"/>
+			<translate x="-0.25" y="0.0" z="-1.1999999999999993"/>
+		</transform>
+	</shape>
+	<shape id="crond_120" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-04" y="1"/>
+			<translate x="-0.25" y="0.0" z="-1.4999999999999991"/>
+		</transform>
+	</shape>
+	<shape id="crond_121" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="3" y="1"/>
+			<translate x="-0.25" y="0.0" z="-1.799999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_122" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="20" y="1"/>
+			<translate x="-0.25" y="0.0" z="-2.0999999999999988"/>
+		</transform>
+	</shape>
+	<shape id="crond_123" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-19" y="1"/>
+			<translate x="-0.25" y="0.0" z="-2.3999999999999986"/>
+		</transform>
+	</shape>
+	<shape id="crond_124" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-12" y="1"/>
+			<translate x="-0.25" y="0.0" z="-2.6999999999999984"/>
+		</transform>
+	</shape>
+	<shape id="crond_125" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="24" y="1"/>
+			<translate x="-0.25" y="0.0" z="-2.9999999999999982"/>
+		</transform>
+	</shape>
+	<shape id="crond_126" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="29" y="1"/>
+			<translate x="-0.8999999999999999" y="0.0" z="3.0"/>
+		</transform>
+	</shape>
+	<shape id="crond_127" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-8" y="1"/>
+			<translate x="-0.8999999999999999" y="0.0" z="2.7"/>
+		</transform>
+	</shape>
+	<shape id="crond_128" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="7" y="1"/>
+			<translate x="-0.8999999999999999" y="0.0" z="2.4"/>
+		</transform>
+	</shape>
+	<shape id="crond_129" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-7" y="1"/>
+			<translate x="-0.8999999999999999" y="0.0" z="2.1"/>
+		</transform>
+	</shape>
+	<shape id="crond_130" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="0.00" y="1"/>
+			<translate x="-0.8999999999999999" y="0.0" z="1.8"/>
+		</transform>
+	</shape>
+	<shape id="crond_131" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="10" y="1"/>
+			<translate x="-0.8999999999999999" y="0.0" z="1.5"/>
+		</transform>
+	</shape>
+	<shape id="crond_132" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="9" y="1"/>
+			<translate x="-0.8999999999999999" y="0.0" z="1.2"/>
+		</transform>
+	</shape>
+	<shape id="crond_133" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-20" y="1"/>
+			<translate x="-0.8999999999999999" y="0.0" z="0.8999999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_134" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="20" y="1"/>
+			<translate x="-0.8999999999999999" y="0.0" z="0.6000000000000001"/>
+		</transform>
+	</shape>
+	<shape id="crond_135" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="13" y="1"/>
+			<translate x="-0.8999999999999999" y="0.0" z="0.30000000000000027"/>
+		</transform>
+	</shape>
+	<shape id="crond_136" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-20" y="1"/>
+			<translate x="-0.8999999999999999" y="0.0" z="4.440892098500626e-16"/>
+		</transform>
+	</shape>
+	<shape id="crond_137" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="13" y="1"/>
+			<translate x="-0.8999999999999999" y="0.0" z="-0.2999999999999994"/>
+		</transform>
+	</shape>
+	<shape id="crond_138" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="3" y="1"/>
+			<translate x="-0.8999999999999999" y="0.0" z="-0.5999999999999992"/>
+		</transform>
+	</shape>
+	<shape id="crond_139" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="23" y="1"/>
+			<translate x="-0.8999999999999999" y="0.0" z="-0.899999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_140" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-20" y="1"/>
+			<translate x="-0.8999999999999999" y="0.0" z="-1.1999999999999993"/>
+		</transform>
+	</shape>
+	<shape id="crond_141" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-10" y="1"/>
+			<translate x="-0.8999999999999999" y="0.0" z="-1.4999999999999991"/>
+		</transform>
+	</shape>
+	<shape id="crond_142" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-20" y="1"/>
+			<translate x="-0.8999999999999999" y="0.0" z="-1.799999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_143" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="20" y="1"/>
+			<translate x="-0.8999999999999999" y="0.0" z="-2.0999999999999988"/>
+		</transform>
+	</shape>
+	<shape id="crond_144" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="5" y="1"/>
+			<translate x="-0.8999999999999999" y="0.0" z="-2.3999999999999986"/>
+		</transform>
+	</shape>
+	<shape id="crond_145" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-6" y="1"/>
+			<translate x="-0.8999999999999999" y="0.0" z="-2.6999999999999984"/>
+		</transform>
+	</shape>
+	<shape id="crond_146" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="6" y="1"/>
+			<translate x="-0.8999999999999999" y="0.0" z="-2.9999999999999982"/>
+		</transform>
+	</shape>
+	<shape id="crond_147" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="2" y="1"/>
+			<translate x="-1.5499999999999998" y="0.0" z="3.0"/>
+		</transform>
+	</shape>
+	<shape id="crond_148" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="10" y="1"/>
+			<translate x="-1.5499999999999998" y="0.0" z="2.7"/>
+		</transform>
+	</shape>
+	<shape id="crond_149" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="11" y="1"/>
+			<translate x="-1.5499999999999998" y="0.0" z="2.4"/>
+		</transform>
+	</shape>
+	<shape id="crond_150" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-11" y="1"/>
+			<translate x="-1.5499999999999998" y="0.0" z="2.1"/>
+		</transform>
+	</shape>
+	<shape id="crond_151" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="19" y="1"/>
+			<translate x="-1.5499999999999998" y="0.0" z="1.8"/>
+		</transform>
+	</shape>
+	<shape id="crond_152" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-19" y="1"/>
+			<translate x="-1.5499999999999998" y="0.0" z="1.5"/>
+		</transform>
+	</shape>
+	<shape id="crond_153" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="0.00" y="1"/>
+			<translate x="-1.5499999999999998" y="0.0" z="1.2"/>
+		</transform>
+	</shape>
+	<shape id="crond_154" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-20" y="1"/>
+			<translate x="-1.5499999999999998" y="0.0" z="0.8999999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_155" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-3" y="1"/>
+			<translate x="-1.5499999999999998" y="0.0" z="0.6000000000000001"/>
+		</transform>
+	</shape>
+	<shape id="crond_156" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="0.00" y="1"/>
+			<translate x="-1.5499999999999998" y="0.0" z="0.30000000000000027"/>
+		</transform>
+	</shape>
+	<shape id="crond_157" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="8" y="1"/>
+			<translate x="-1.5499999999999998" y="0.0" z="4.440892098500626e-16"/>
+		</transform>
+	</shape>
+	<shape id="crond_158" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="30" y="1"/>
+			<translate x="-1.5499999999999998" y="0.0" z="-0.2999999999999994"/>
+		</transform>
+	</shape>
+	<shape id="crond_159" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="0.00" y="1"/>
+			<translate x="-1.5499999999999998" y="0.0" z="-0.5999999999999992"/>
+		</transform>
+	</shape>
+	<shape id="crond_160" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="19" y="1"/>
+			<translate x="-1.5499999999999998" y="0.0" z="-0.899999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_161" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="0.00" y="1"/>
+			<translate x="-1.5499999999999998" y="0.0" z="-1.1999999999999993"/>
+		</transform>
+	</shape>
+	<shape id="crond_162" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="0.00" y="1"/>
+			<translate x="-1.5499999999999998" y="0.0" z="-1.4999999999999991"/>
+		</transform>
+	</shape>
+	<shape id="crond_163" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="23" y="1"/>
+			<translate x="-1.5499999999999998" y="0.0" z="-1.799999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_164" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="32" y="1"/>
+			<translate x="-1.5499999999999998" y="0.0" z="-2.0999999999999988"/>
+		</transform>
+	</shape>
+	<shape id="crond_165" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="12" y="1"/>
+			<translate x="-1.5499999999999998" y="0.0" z="-2.3999999999999986"/>
+		</transform>
+	</shape>
+	<shape id="crond_166" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="01" y="1"/>
+			<translate x="-1.5499999999999998" y="0.0" z="-2.6999999999999984"/>
+		</transform>
+	</shape>
+	<shape id="crond_167" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="15" y="1"/>
+			<translate x="-1.5499999999999998" y="0.0" z="-2.9999999999999982"/>
+		</transform>
+	</shape>
+	<shape id="crond_168" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-12" y="1"/>
+			<translate x="-2.2" y="0.0" z="3.0"/>
+		</transform>
+	</shape>
+	<shape id="crond_169" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="12" y="1"/>
+			<translate x="-2.2" y="0.0" z="2.7"/>
+		</transform>
+	</shape>
+	<shape id="crond_170" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="13" y="1"/>
+			<translate x="-2.2" y="0.0" z="2.4"/>
+		</transform>
+	</shape>
+	<shape id="crond_171" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-10" y="1"/>
+			<translate x="-2.2" y="0.0" z="2.1"/>
+		</transform>
+	</shape>
+	<shape id="crond_172" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="8" y="1"/>
+			<translate x="-2.2" y="0.0" z="1.8"/>
+		</transform>
+	</shape>
+	<shape id="crond_173" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="10" y="1"/>
+			<translate x="-2.2" y="0.0" z="1.5"/>
+		</transform>
+	</shape>
+	<shape id="crond_174" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-9" y="1"/>
+			<translate x="-2.2" y="0.0" z="1.2"/>
+		</transform>
+	</shape>
+	<shape id="crond_175" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="25" y="1"/>
+			<translate x="-2.2" y="0.0" z="0.8999999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_176" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-21" y="1"/>
+			<translate x="-2.2" y="0.0" z="0.6000000000000001"/>
+		</transform>
+	</shape>
+	<shape id="crond_177" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="20" y="1"/>
+			<translate x="-2.2" y="0.0" z="0.30000000000000027"/>
+		</transform>
+	</shape>
+	<shape id="crond_178" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="17" y="1"/>
+			<translate x="-2.2" y="0.0" z="4.440892098500626e-16"/>
+		</transform>
+	</shape>
+	<shape id="crond_179" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-21" y="1"/>
+			<translate x="-2.2" y="0.0" z="-0.2999999999999994"/>
+		</transform>
+	</shape>
+	<shape id="crond_180" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="12" y="1"/>
+			<translate x="-2.2" y="0.0" z="-0.5999999999999992"/>
+		</transform>
+	</shape>
+	<shape id="crond_181" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-20" y="1"/>
+			<translate x="-2.2" y="0.0" z="-0.899999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_182" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="18" y="1"/>
+			<translate x="-2.2" y="0.0" z="-1.1999999999999993"/>
+		</transform>
+	</shape>
+	<shape id="crond_183" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="0.00" y="1"/>
+			<translate x="-2.2" y="0.0" z="-1.4999999999999991"/>
+		</transform>
+	</shape>
+	<shape id="crond_184" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="8" y="1"/>
+			<translate x="-2.2" y="0.0" z="-1.799999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_185" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="10" y="1"/>
+			<translate x="-2.2" y="0.0" z="-2.0999999999999988"/>
+		</transform>
+	</shape>
+	<shape id="crond_186" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="21" y="1"/>
+			<translate x="-2.2" y="0.0" z="-2.3999999999999986"/>
+		</transform>
+	</shape>
+	<shape id="crond_187" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-20" y="1"/>
+			<translate x="-2.2" y="0.0" z="-2.6999999999999984"/>
+		</transform>
+	</shape>
+	<shape id="crond_188" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="0.00" y="1"/>
+			<translate x="-2.2" y="0.0" z="-2.9999999999999982"/>
+		</transform>
+	</shape>
+	<shape id="crond_189" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="0.00" y="1"/>
+			<translate x="-2.8500000000000005" y="0.0" z="3.0"/>
+		</transform>
+	</shape>
+	<shape id="crond_190" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="8" y="1"/>
+			<translate x="-2.8500000000000005" y="0.0" z="2.7"/>
+		</transform>
+	</shape>
+	<shape id="crond_191" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="0.00" y="1"/>
+			<translate x="-2.8500000000000005" y="0.0" z="2.4"/>
+		</transform>
+	</shape>
+	<shape id="crond_192" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="2" y="1"/>
+			<translate x="-2.8500000000000005" y="0.0" z="2.1"/>
+		</transform>
+	</shape>
+	<shape id="crond_193" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="14" y="1"/>
+			<translate x="-2.8500000000000005" y="0.0" z="1.8"/>
+		</transform>
+	</shape>
+	<shape id="crond_194" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="9" y="1"/>
+			<translate x="-2.8500000000000005" y="0.0" z="1.5"/>
+		</transform>
+	</shape>
+	<shape id="crond_195" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="6" y="1"/>
+			<translate x="-2.8500000000000005" y="0.0" z="1.2"/>
+		</transform>
+	</shape>
+	<shape id="crond_196" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="30" y="1"/>
+			<translate x="-2.8500000000000005" y="0.0" z="0.8999999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_197" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-20" y="1"/>
+			<translate x="-2.8500000000000005" y="0.0" z="0.6000000000000001"/>
+		</transform>
+	</shape>
+	<shape id="crond_198" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="20" y="1"/>
+			<translate x="-2.8500000000000005" y="0.0" z="0.30000000000000027"/>
+		</transform>
+	</shape>
+	<shape id="crond_199" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-30" y="1"/>
+			<translate x="-2.8500000000000005" y="0.0" z="4.440892098500626e-16"/>
+		</transform>
+	</shape>
+	<shape id="crond_200" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="5" y="1"/>
+			<translate x="-2.8500000000000005" y="0.0" z="-0.2999999999999994"/>
+		</transform>
+	</shape>
+	<shape id="crond_201" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="-20" y="1"/>
+			<translate x="-2.8500000000000005" y="0.0" z="-0.5999999999999992"/>
+		</transform>
+	</shape>
+	<shape id="crond_202" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="17" y="1"/>
+			<translate x="-2.8500000000000005" y="0.0" z="-0.899999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_203" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="3" y="1"/>
+			<translate x="-2.8500000000000005" y="0.0" z="-1.1999999999999993"/>
+		</transform>
+	</shape>
+	<shape id="crond_204" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="34" y="1"/>
+			<translate x="-2.8500000000000005" y="0.0" z="-1.4999999999999991"/>
+		</transform>
+	</shape>
+	<shape id="crond_205" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="6" y="1"/>
+			<translate x="-2.8500000000000005" y="0.0" z="-1.799999999999999"/>
+		</transform>
+	</shape>
+	<shape id="crond_206" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="5" y="1"/>
+			<translate x="-2.8500000000000005" y="0.0" z="-2.0999999999999988"/>
+		</transform>
+	</shape>
+	<shape id="crond_207" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="0.00" y="1"/>
+			<translate x="-2.8500000000000005" y="0.0" z="-2.3999999999999986"/>
+		</transform>
+	</shape>
+	<shape id="crond_208" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="12" y="1"/>
+			<translate x="-2.8500000000000005" y="0.0" z="-2.6999999999999984"/>
+		</transform>
+	</shape>
+	<shape id="crond_209" type="instance">
+		<ref id="crond"/>
+		<transform name="to_world">
+			<rotate angle="20" y="1"/>
+			<translate x="-2.8500000000000005" y="0.0" z="-2.9999999999999982"/>
+		</transform>
+	</shape>
+</scene>
