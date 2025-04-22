@@ -1,26 +1,3 @@
-<!-- <img src="https://github.com/mitsuba-renderer/mitsuba3/raw/master/docs/images/logo_plain.png" width="120" height="120" alt="Mitsuba logo"> -->
-
-<img src="https://raw.githubusercontent.com/mitsuba-renderer/mitsuba-data/master/docs/images/banners/banner_01.jpg"
-alt="Mitsuba banner">
-
-# Mitsuba Renderer 3
-
-| Documentation  | Tutorial videos  | Linux             | MacOS             | Windows           |       PyPI        |
-|      :---:     |      :---:       |       :---:       |       :---:       |       :---:       |       :---:       |
-| [![docs][1]][2]| [![vids][9]][10] | [![rgl-ci][3]][4] | [![rgl-ci][5]][6] | [![rgl-ci][7]][8] | [![pypi][11]][12] |
-
-[1]: https://readthedocs.org/projects/mitsuba/badge/?version=stable
-[2]: https://mitsuba.readthedocs.io/en/stable/
-[3]: https://rgl-ci.epfl.ch/app/rest/builds/buildType(id:Mitsuba3_LinuxAmd64Clang10)/statusIcon.svg
-[4]: https://rgl-ci.epfl.ch/viewType.html?buildTypeId=Mitsuba3_LinuxAmd64Clang10&guest=1
-[5]: https://rgl-ci.epfl.ch/app/rest/builds/buildType(id:Mitsuba3_LinuxAmd64gcc9)/statusIcon.svg
-[6]: https://rgl-ci.epfl.ch/viewType.html?buildTypeId=Mitsuba3_LinuxAmd64gcc9&guest=1
-[7]: https://rgl-ci.epfl.ch/app/rest/builds/buildType(id:Mitsuba3_WindowsAmd64msvc2020)/statusIcon.svg
-[8]: https://rgl-ci.epfl.ch/viewType.html?buildTypeId=Mitsuba3_WindowsAmd64msvc2020&guest=1
-[9]: https://img.shields.io/badge/YouTube-View-green?style=plastic&logo=youtube
-[10]: https://www.youtube.com/watch?v=9Ja9buZx0Cs&list=PLI9y-85z_Po6da-pyTNGTns2n4fhpbLe5&index=1
-[11]: https://img.shields.io/pypi/v/mitsuba.svg?color=green
-[12]: https://pypi.org/pypi/mitsuba
 
 ## Introduction
 

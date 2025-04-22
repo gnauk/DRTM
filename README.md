@@ -24,8 +24,7 @@ The **usecases folder** contains ready-to-run examples demonstrating key functio
      The ProspectD code with DRJIT to support the differentiation ability.
 
 ## Others
-  Note: DRTM is now in code mode, dostn't has the GUI.
-  Note: This implementation targets Mitsuba3 v3.5.0 due to certain code compatibility issues.
+  Note: DRTM is now in code mode, dostn't has the GUI. The current implementation targets Mitsuba3 v3.5.0 due to certain code compatibility issues.
 
   The develop of DRTM model is on the road.
 
